@@ -16,13 +16,21 @@ function draw() {
 
   fill(204, 18, 178);
   textAlign(CENTER);
-  textSize(100);
+  textSize(150);
   textFont(hemiHead);
 
-  text(txt, width / 2, height / 2);
+  translate(width / 2, height / 2 + 50);
+
+  text(txt, 0, 0);
   filter(BLUR, 14);
 
-  textSize(96);
+  textSize(146);
   fill(255);
-  text(txt, width / 2, height / 2);
+  text(txt, 0, 0);
+}
+
+function keyPressed() {
+  if (32 == keyCode) { // space key is pressed
+     saveCanvas('disco', 'png');
+  }
 }
