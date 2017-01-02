@@ -9,11 +9,25 @@
       padding: 0; 
       margin: 0;
     }
+    svg {
+      -moz-user-select: none;
+      -webkit-user-select: none;
+      user-select: none;
+    }
+    .container {
+      position: relative;
+    }
+    .container * {
+      position: absolute;
+    }
   </style>
 </head>
 
 <body>
-  <svg width="960" height="500"></svg>
+  <div class="container">
+    <img id="iron" src="../assets/image/iron.jpg" width="800" />
+    <svg></svg>
+  </div>
   <script language="javascript" type="text/javascript" src="sketch.js"></script>
 </body>
 
