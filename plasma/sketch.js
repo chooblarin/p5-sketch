@@ -1,9 +1,14 @@
-function setup() {
-  createCanvas(400, 400);
-}
-
 var time = 0;
-var cellSize = 4;
+var cellSize = 2;
+
+var gif;
+var c;
+var recording = false;
+
+function setup() {
+  c = createCanvas(200, 200);
+  setupGif();
+}
 
 function draw() {
   background(0);
@@ -33,10 +38,28 @@ function draw() {
       rect(x, y, cellSize, cellSize);
     }
   }
-  time += 0.5;
+  time += 0.2;
+
+  if (recording && frameCount % 2 == 0) {
+    gif.addFrame(c.elt, { delay: 1, copy: true });
+  }
 }
 
-function keyPressed() {
-  if (32 == keyCode) { // space key is pressed
+function mousePressed() {
+  recording = !recording;
+  if (!recording) {
+    gif.render();
   }
+}
+
+function setupGif() {
+  gif = new GIF({
+    workers: 2,
+    quality: 40
+  });
+
+  gif.on('finished', function (blob) {
+    window.open(URL.createObjectURL(blob));
+    setupGif();
+  });
 }
