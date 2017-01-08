@@ -28,6 +28,9 @@ class Pendulum {
 }
 
 let c;
+let gif;
+let recording = false;
+
 let pendulums = [];
 
 function setup() {
@@ -35,11 +38,13 @@ function setup() {
   let n = 20;
   let origin = createVector(width / 2, -40);
   for (let i = 0; i < n; i++) {
-    let b =  (11 + i) / 20 / TWO_PI;
+    let b = (11 + i) / 20 / TWO_PI;
     let r = 2.8 / (b * b);
     let p = new Pendulum(origin, r);
     pendulums.push(p);
   }
+
+  setupGif();
 }
 
 function draw() {
@@ -47,5 +52,28 @@ function draw() {
   pendulums.forEach(function (p) {
     p.update();
     p.display();
+  });
+
+  if (recording && frameCount % 2 == 0) {
+    gif.addFrame(c.elt, { delay: 1, copy: true });
+  }
+}
+
+function mousePressed() {
+  recording = !recording;
+  if (!recording) {
+    gif.render();
+  }
+}
+
+function setupGif() {
+  gif = new GIF({
+    workers: 2,
+    quality: 40
+  });
+
+  gif.on('finished', function (blob) {
+    window.open(URL.createObjectURL(blob));
+    setupGif();
   });
 }
