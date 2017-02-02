@@ -1,7 +1,10 @@
-# Untitled art work [WIP]
+# My Artwork Collections
 
-- [Voronoi fractals using d3.js](https://bl.ocks.org/josdirksen/806e33c678753cd5133c1d40d73e8360)
-- [Voronoi Tessellation](https://bl.ocks.org/mbostock/4060366)
-- [Delaunay 三角形分割 - MATLAB & Simulink](https://jp.mathworks.com/help/matlab/math/delaunay-triangulation.html?requestedDomain=www.mathworks.com)
-- [Delaunay Triangulation](http://bl.ocks.org/mbostock/4341156)
-- [simutils-0001: Diffusion limited aggregation](http://toxiclibs.org/2010/02/new-package-simutils/)
+## Reference
+
+- [Delaunay triangulation](https://en.wikipedia.org/wiki/Delaunay_triangulation)
+- [Voronoi diagram](https://en.wikipedia.org/wiki/Voronoi_diagram)
+- [Perlin noise](https://en.wikipedia.org/wiki/Perlin_noise)
+- [Perspective projection](https://en.wikipedia.org/wiki/3D_projection)
+- [Plasma effect](https://en.wikipedia.org/wiki/Plasma_effect)
+- [Pendulum wave](https://www.youtube.com/watch?v=yVkdfJ9PkRQ)
