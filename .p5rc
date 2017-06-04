@@ -2,6 +2,7 @@
   "name": "sketch-work",
   "projects": [
     "voronoi",
-    "delaunay"
+    "delaunay",
+    "udd"
   ]
 }
