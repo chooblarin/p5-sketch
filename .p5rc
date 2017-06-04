@@ -1,6 +1,7 @@
 {
   "name": "sketch-work",
   "projects": [
-    "voronoi"
+    "voronoi",
+    "delaunay"
   ]
 }
