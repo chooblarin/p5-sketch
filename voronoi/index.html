@@ -1,34 +1,38 @@
-<!DOCTYPE html>
-<html>
+  <!DOCTYPE html>
+  <html>
+  <head>
+  	<meta charset="UTF-8">
+  	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-<head>
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <script language="javascript" type="text/javascript" src="../libraries/d3.js"></script>
-  <style>
-    body {
-      padding: 0;
-      margin: 0;
-    }
-    svg {
-      -moz-user-select: none;
-      -webkit-user-select: none;
-      user-select: none;
-    }
-    .container {
-      position: relative;
-    }
-    .container * {
-      position: absolute;
-    }
-  </style>
-</head>
+  	<title>voronoi</title>
 
-<body>
-  <div class="container">
-    <img id="captain" src="../assets/image/captain.jpg" width="800" />
-    <svg></svg>
-  </div>
-  <script language="javascript" type="text/javascript" src="sketch.js"></script>
-</body>
+    <script language="javascript" type="text/javascript" src="../libraries/d3.js"></script>
+    <style>
+      body {
+        padding: 0;
+        margin: 0;
+      }
+      svg {
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        user-select: none;
+      }
+      .container {
+        position: relative;
+      }
+      .container * {
+        position: absolute;
+      }
+    </style>
+  </head>
 
+  <body>
+    <div class="container">
+      <img id="captain" src="./assets/image/captain.jpg" width="800" />
+      <svg></svg>
+    </div>
+
+    <script language="javascript" type="text/javascript" src="sketch.js"></script>
+  </body>
 </html>
