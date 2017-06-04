@@ -3,6 +3,7 @@
   "projects": [
     "voronoi",
     "delaunay",
-    "udd"
+    "udd",
+    "biribiri"
   ]
 }
