@@ -4,6 +4,7 @@
     "voronoi",
     "delaunay",
     "udd",
-    "biribiri"
+    "biribiri",
+    "waterdrop"
   ]
 }
