@@ -1,7 +1,7 @@
 let dropletsSystem
 
 function setup() {
-	createCanvas(600, 1000)
+	createCanvas(400, 400)
 
 	dropletsSystem = new DropletsSystem()
 }

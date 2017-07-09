@@ -28,7 +28,8 @@ class DropletsSystem {
 
     const x = (r2 * x1 + r1 * x2) / (r1 + r2)
     const y = (r2 * y1 + r1 * y2) / (r1 + r2)
-    return new Droplet(createVector(x, y), color(255), (r1 + r2) * 1.0)
+    const r = Math.min((r1 + r2) * 0.8, 12)
+    return new Droplet(createVector(x, y), color(255), r)
   }
 
   checkCollision(d1, d2) {
@@ -48,8 +49,9 @@ class DropletsSystem {
     }
 
     const dropouts = new Set()
-    const compounds = new Set()
     const suvivors = new Set()
+
+    const compounds = []
 
     for (let i = 0; i < this.droplets.length; i++) {
       for (let j = 0; j < this.droplets.length; j++) {
@@ -63,7 +65,7 @@ class DropletsSystem {
         if (this.checkCollision(d1, d2)) {
           dropouts.add(d1)
           dropouts.add(d2)
-          compounds.add(this.createCompound(d1, d2))
+          compounds.push([d1, d2])
         } else {
           suvivors.add(d1)
           suvivors.add(d2)
@@ -74,9 +76,13 @@ class DropletsSystem {
     dropouts.forEach((val) => {
       suvivors.delete(val)
     })
-    compounds.forEach((val) => {
-      suvivors.add(val)
-    })
+
+    for (let elem of compounds) {
+      const compound = this.createCompound(elem[0], elem[1])
+      suvivors.add(compound)
+      break // workaround to avoid infinite loop
+    }
+
     this.droplets = Array.from(suvivors)
   }
 
