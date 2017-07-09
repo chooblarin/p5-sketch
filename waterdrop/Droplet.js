@@ -10,12 +10,14 @@ class Droplet {
     this.velocity = createVector(0, 0)
     this.acceleration = createVector(0, 0)
 
-    this.lifespan = 255.0
+    this.lifespan = 500.0
     this.xoff = 0.0
   }
 
   applyGravity(g) {
-    this.acceleration.add(p5.Vector.mult(g, this.mass))
+    if (1.0 < this.mass) {
+      this.acceleration.add(p5.Vector.mult(g, this.mass))
+    }
   }
 
   applyForce(f) {

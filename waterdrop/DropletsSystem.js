@@ -28,7 +28,7 @@ class DropletsSystem {
 
     const x = (r2 * x1 + r1 * x2) / (r1 + r2)
     const y = (r2 * y1 + r1 * y2) / (r1 + r2)
-    return new Droplet(createVector(x, y), color(255), r1 + r2)
+    return new Droplet(createVector(x, y), color(255), (r1 + r2) * 1.0)
   }
 
   checkCollision(d1, d2) {
@@ -83,7 +83,7 @@ class DropletsSystem {
   addDroplet(x, y) {
     const p = createVector(x, y)
     const c = color(255)
-    const radius = random(10, 20)
+    const radius = random(3, 7)
     const d = new Droplet(p, c, radius)
     this.droplets.push(d)
   }
