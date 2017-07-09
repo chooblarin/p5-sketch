@@ -11,6 +11,7 @@ class Droplet {
     this.acceleration = createVector(0, 0)
 
     this.lifespan = 255.0
+    this.xoff = 0.0
   }
 
   applyGravity(g) {
@@ -22,11 +23,13 @@ class Droplet {
   }
 
   update() {
+    const n = createVector(this.velocity.y * 0.7 * (noise(this.xoff) - 0.5), 0)
     this.velocity.add(this.acceleration)
-    this.position.add(this.velocity)
+    this.position.add(p5.Vector.add(this.velocity, n))
     this.acceleration.mult(0)
 
-    this.lifespan -= 2.0
+    this.lifespan -= 1.0
+    this.xoff += 0.07
   }
 
   render() {
