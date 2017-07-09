@@ -1,11 +1,11 @@
 class Droplet {
 
-  constructor(position, color, size) {
+  constructor(position, color, radius) {
     this.position = position
     this.color = color
-    this.size = size
+    this.radius = radius
 
-    this.mass = size / 10.0
+    this.mass = radius / 10.0
 
     this.velocity = createVector(0, 0)
     this.acceleration = createVector(0, 0)
@@ -35,7 +35,7 @@ class Droplet {
   render() {
     fill(this.color)
     noStroke()
-    ellipse(this.position.x, this.position.y, this.size, this.size)
+    ellipse(this.position.x, this.position.y, this.radius, this.radius)
   }
 
   isDead() {
