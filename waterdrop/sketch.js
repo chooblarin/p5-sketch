@@ -1,10 +1,10 @@
 let droplets
-let gravity
+let g
 
 function setup() {
 	createCanvas(windowWidth, windowHeight)
 	droplets = []
-	gravity = createVector(0, 0.1)
+	g = createVector(0, 0.1)
 }
 
 function draw() {
@@ -13,7 +13,7 @@ function draw() {
 	droplets = droplets.filter((elem) => !elem.isDead())
 
 	droplets.forEach((elem, i) => {
-		elem.applyForce(gravity)
+		elem.applyGravity(g)
 		elem.update()
 		elem.render()
 	})
@@ -22,7 +22,7 @@ function draw() {
 function mousePressed() {
 	const p = createVector(mouseX, mouseY)
 	const c = color(255)
-	const size = 40
+	const size = random(20, 50)
 	const d = new Droplet(p, c, size)
 	droplets.push(d)
 }
