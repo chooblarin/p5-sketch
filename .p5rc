@@ -8,6 +8,7 @@
     "waterdrop",
     "capture",
     "capture-voronoi",
-    "fireball"
+    "fireball",
+    "capture-face"
   ]
 }
