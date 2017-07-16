@@ -6,6 +6,7 @@
     "udd",
     "biribiri",
     "waterdrop",
-    "capture"
+    "capture",
+    "capture-voronoi"
   ]
 }
