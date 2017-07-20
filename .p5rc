@@ -10,6 +10,7 @@
     "capture-voronoi",
     "capture-face",
     "fireball",
-    "particle-sound"
+    "particle-sound",
+    "metaball"
   ]
 }
